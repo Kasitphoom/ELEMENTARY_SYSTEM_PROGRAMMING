@@ -1,0 +1,1 @@
+C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\23.8.22\struct_triangle\target\debug\struct_triangle.exe: C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\23.8.22\struct_triangle\src\main.rs
