@@ -1,0 +1,1 @@
+C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\13.9.22\letter\target\debug\letter.exe: C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\13.9.22\letter\src\main.rs
