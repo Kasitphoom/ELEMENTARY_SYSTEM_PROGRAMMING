@@ -60,37 +60,72 @@ fn calc_percentage( freq_table: &mut Vec<freq_table_entry>, total: u64 ) {
   }
 }
 
-fn print_vec( out_file: &String, freq_table: &Vec<freq_table_entry> , non_thai_table: &Vec<freq_table_entry>) {
+fn print_vec( out_file: &String, freq_table: &Vec<freq_table_entry> , non_thai_table: &Vec<freq_table_entry>, text: String, total: u64 ) {
   // create a new file
   let file = fs::File::create(out_file).expect("Unable to create file");
   // write to the file
   let mut file = BufWriter::new(file);
 
+  writeln!(file, "Text to be processed:\n{}\n\n", text).expect("Unable to write data");
+
   println!("Thai Character\n========================================================");
-  write!(file, "Thai Character\n========================================================\n").expect("Unable to write to file");
+  writeln!(file, "========================================================\n/***************Thai Character***************\\\n").expect("Unable to write to file");
 
   println!("Letter\tUnicode\tCount\tFrequency (%)");
-  write!(file, "Letter\tUnicode\tCount\tFrequency (%)\n").expect("Unable to write to file");
+  writeln!(file, "Letter\tUnicode\tCount\tFrequency (%)").expect("Unable to write to file");
 
   for e in freq_table.iter() {
     println!("{}\t0{:X}\t{}\t{:.3}%", e.letter, e.letter as u64, e.count, e.frequency );
-    write!(file, "{:5}\t0{:X}\t{}\t{:.3}%\n", e.letter, e.letter as u64, e.count, e.frequency ).expect("Unable to write to file");
+    let unicode = format!("0{:X}", e.letter as u64);
+    writeln!(file, "{:9}\t0{:8}\t{}\t{:.3}%\n", e.letter, unicode, e.count, e.frequency ).expect("Unable to write to file");
   }
   println!("\nNon-Thai Character\n========================================================");
-  write!(file, "\nNon-Thai Character\n========================================================\n").expect("Unable to write to file");
+  writeln!(file, "========================================================\n/***************Non-Thai Character***************\\\n").expect("Unable to write to file");
 
   println!("Letter\tUnicode\tCount\tFrequency (%)");
-  write!(file, "Letter\tUnicode\tCount\tFrequency (%)\n").expect("Unable to write to file");
+  writeln!(file, "Letter\tUnicode\tCount\tFrequency (%)").expect("Unable to write to file");
 
   for e in non_thai_table.iter() {
     println!("{}\t0{:X}\t{}\t{:.3}%", e.letter, e.letter as u64, e.count, e.frequency );
-    write!(file, "{:5}\t0{:X}\t{}\t{:.3}%\n", e.letter, e.letter as u64, e.count, e.frequency ).expect("Unable to write to file");
+    let unicode = format!("0{:X}", e.letter as u64);
+    writeln!(file, "{:9}\t0{:8}\t{}\t{:.3}%\n", e.letter, unicode, e.count, e.frequency ).expect("Unable to write to file");
   }
+  
+  
+  let (max_thai, max_non_thai) = add_summary(freq_table, non_thai_table);
 
+  let sum_head = format!("RESULT SUMMARY: ");
+  writeln!(file, "========================================================\n{}\n{}\n{}",sum_head, max_thai, max_non_thai).expect("Unable to write to file");
 
 } 
 // print_report - print table in readable form
 // add_summary - add useful summary - # useful chars, #other spaces, punctuation, non-Thai letter
+fn add_summary(freq_table: &Vec<freq_table_entry>, non_thai_table: &Vec<freq_table_entry>) -> (String, String) {
+
+  // check most frequent letter in thai
+  let mut max = 0;
+  let mut max_letter = ' ';
+  for e in freq_table.iter() {
+    if e.count > max {
+      max = e.count;
+      max_letter = e.letter;
+    }
+  }
+  let max_thai = format!("Most frequent letter in Thai is \"{}\" with {} occurrences", max_letter, max);
+
+  // check most frequent letter that are not thai
+  max = 0;
+  max_letter = ' ';
+  for e in non_thai_table.iter() {
+    if e.count > max {
+      max = e.count;
+      max_letter = e.letter;
+    }
+  }
+  let max_non_thai = format!("Most frequent letter that are not Thai is \"{}\" with {} occurrences", max_letter, max);
+
+  return(max_thai, max_non_thai);
+}
 //     Most frequent letter
 
 fn main() {
@@ -123,7 +158,5 @@ fn main() {
   calc_percentage(&mut cha, total);
   calc_percentage(&mut non_thai, total);
   // fn to Generate report
-  print_vec( outputpath ,&cha, &non_thai );
-  // fn to add summary
-  // ...
+  print_vec( outputpath ,&cha, &non_thai, text, total);
 }
