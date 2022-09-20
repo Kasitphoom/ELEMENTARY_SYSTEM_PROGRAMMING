@@ -69,18 +69,18 @@ fn print_vec( out_file: &String, freq_table: &Vec<freq_table_entry> , non_thai_t
 
   for e in freq_table.iter() {
     let unicode = format!("0{:X}", e.letter as u64);
-    writeln!(file, "{:9}\t0{:8}\t{}\t{:.3}%\n", e.letter, unicode, e.count, e.frequency ).expect("Unable to write to file");
+    writeln!(file, "{:9}\t{:8}\t{}\t{:.3}%", e.letter, unicode, e.count, e.frequency ).expect("Unable to write to file");
   }
   writeln!(file, "========================================================\n/***************Non-Thai Character***************\\\n").expect("Unable to write to file");
   writeln!(file, "Letter\tUnicode\tCount\tFrequency (%)").expect("Unable to write to file");
 
   for e in non_thai_table.iter() {
     let unicode = format!("0{:X}", e.letter as u64);
-    writeln!(file, "{:9}\t0{:8}\t{}\t{:.3}%\n", e.letter, unicode, e.count, e.frequency ).expect("Unable to write to file");
+    writeln!(file, "{:9}\t{:8}\t{}\t{:.3}%", e.letter, unicode, e.count, e.frequency ).expect("Unable to write to file");
   }
   
   let (max_thai, max_non_thai) = add_summary(freq_table, non_thai_table);
-  let time = format!("Time duration to {} miliseconds", duration.as_millis());
+  let time = format!("Time duration to proceed letter analysing is {} miliseconds", duration.as_millis());
   let total = format!("Total number of characters {}", total);
 
   let sum_head = format!("RESULT SUMMARY: ");
