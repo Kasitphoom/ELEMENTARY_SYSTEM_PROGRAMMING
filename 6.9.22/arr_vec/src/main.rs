@@ -48,7 +48,7 @@ fn time_array(n:usize) -> f64 {
 fn array_access_i(arr:[Kite; N]) -> f64{ 
   let t0 = Instant::now();
   for i in arr{
-    let mut a = i;
+    let mut _a = i;
   }
   let duration = time_diff_nsecs(t0);
   println!("Start {:?} Time to access array with iterators {:?} ns/elm", t0, (duration)/(N as f64));
@@ -58,7 +58,7 @@ fn array_access_i(arr:[Kite; N]) -> f64{
 fn array_access_noi(arr:[Kite; N]) -> f64{ 
   let t0 = Instant::now();
   for i in 0..N{
-    let mut a = arr[i];
+    let mut _a = arr[i];
   }
   let duration = time_diff_nsecs(t0);
   println!("Start {:?} Time to access array without iterators {:?}  ns/elm", t0, (duration)/(N as f64));
