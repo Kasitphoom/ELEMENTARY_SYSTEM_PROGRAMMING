@@ -1,0 +1,1 @@
+C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\22.10.4\cossin\target\debug\cossin.exe: C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\22.10.4\cossin\src\main.rs
