@@ -63,7 +63,7 @@ fn main() {
 
     let mut i = 0;
     for line in lines{
-        print!("Line {}: ", i);
+        print!("Line {}: ", i + 1);
         let mut langvec = vec![];
         let mut freqvec = vec![];
         for c in line.chars(){
