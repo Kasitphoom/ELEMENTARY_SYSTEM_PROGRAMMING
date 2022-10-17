@@ -1,4 +1,4 @@
-use std::{io, vec, env, fs};
+use std::{vec, env, fs};
 
 #[derive(Debug, Clone, Copy, PartialEq)]
 enum Lang {Japanese, English, Chinese, Burmese, Korea, AccentedLatin, ASCII}
@@ -25,7 +25,7 @@ fn find_unicode(langtype:[LangType;7], c:char) -> Lang{
     if !found {
        panic!("The letter {} not found in any cases ({:x})", c, uni); 
     }
-    
+
     lang
 }
 
