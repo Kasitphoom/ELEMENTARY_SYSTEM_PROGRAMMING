@@ -1,0 +1,13 @@
+Role: Student
+name: Some One
+age: 18
+skill: Python, Rust, Java, Java Script, HTML, CSS, PHP
+location: 25.07542, -90.84256
+Role: Teacher
+name: Another One
+age: 30
+location: -32.45020, 13.05096
+Role: Engineer
+name: SomeOne Else
+age: 25
+location: 25.79829, 178.00369

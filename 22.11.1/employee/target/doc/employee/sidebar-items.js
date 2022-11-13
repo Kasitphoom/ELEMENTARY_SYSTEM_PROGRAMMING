@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":[["Degree",""]],"fn":[["main",""],["putinfo",""],["read_text_line",""]],"struct":[["Engineer",""],["GPS",""],["Student",""],["Teacher",""]],"trait":[["Employee",""]]};

@@ -1,0 +1,16 @@
+Student: Some One
+Age: 18
+Skills: ["Python", " Rust", " Java", " Java Script", " HTML", " CSS", " PHP"]
+Latitude: 25.07542° N 
+Longitude: -90.84256° W
+
+Teacher: Another One
+Age: 30
+Latitude: -32.4502° S 
+Longitude: 13.05096° E
+
+Engineer: SomeOne Else
+Age: 25
+Latitude: 25.79829° N 
+Longitude: 178.00369° E
+
