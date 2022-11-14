@@ -192,6 +192,8 @@ fn main() {
     let mut vals = Vec::new();
     let mut itter = 0;
     let mut struct_name = String::new();
+    let mut agesum = 0;
+    let mut person = 0;
     // create empty variable
     loop {
         
@@ -201,7 +203,6 @@ fn main() {
         else {
             let nc = text.split(": ");
             let str_vec = nc.collect::<Vec<&str>>();
-            
 
             if str_vec[0].to_string() == "Role".to_string(){
                 if itter != 0{
@@ -210,8 +211,13 @@ fn main() {
                     vals.clear();
                 }
                 struct_name = str_vec[1].to_string();
+                person += 1;
             }
             eprintln!("{}", itter);
+
+            if str_vec[0].to_string() == "age".to_string(){
+                agesum += str_vec[1].parse::<u8>().unwrap();
+            }
 
             vals.push(str_vec[1].to_string());
             eprintln!("Vals => {:?}", vals[1..vals.len()].to_vec());
@@ -219,4 +225,5 @@ fn main() {
         itter += 1;
     }
     print_res(struct_name, vals[1..vals.len()].to_vec());
+    println!("Average age: {}", agesum/person);
 }

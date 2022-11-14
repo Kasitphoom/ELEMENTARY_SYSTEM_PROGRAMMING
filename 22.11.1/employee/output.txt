@@ -14,3 +14,4 @@ Age: 25
 Latitude: 25.79829° N 
 Longitude: 178.00369° E
 
+Average age: 24
