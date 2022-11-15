@@ -59,7 +59,7 @@ fn min_max( lat_long: &Vec<GPS> ) -> (GPS, GPS) {
 
 fn std_deciation_tometer( lat_long: &Vec<GPS> ) -> (f64, f64) {
     let (std_lat, std_long) = standard_deviation( lat_long );
-    (std_lat * 111_139.0, 111_139.0 * std_lat.cos() * std_long)
+    (std_lat * 111_139.0, std_long * 107_963.0)
 }
 
 fn histrogram_bins( lat_long: &Vec<GPS> ){
@@ -67,7 +67,33 @@ fn histrogram_bins( lat_long: &Vec<GPS> ){
     let lat_vec = lat_long.iter().map(|gps| gps.latitude).collect::<Vec<f64>>();
     let long_vec = lat_long.iter().map(|gps| gps.longitude).collect::<Vec<f64>>();
     let (min, max) = min_max( lat_long );
-    
+    // for every increment of data_range, count the number of data points
+    let mut lat_count = 0;
+    let mut long_count = 0;
+    let mut lat_bin = min.latitude;
+    let mut long_bin = min.longitude;
+    println!("=======Latitude======");
+    while lat_bin < max.latitude {
+        for lat in &lat_vec {
+            if *lat >= lat_bin && *lat < lat_bin + data_range {
+                lat_count += 1;
+            }
+        }
+        println!("{:.5} {}", lat_bin, "*".repeat(lat_count));
+        lat_count = 0;
+        lat_bin += data_range;
+    }
+    println!("=======Longitude======");
+    while long_bin < max.longitude {
+        for long in &long_vec {
+            if *long >= long_bin && *long < long_bin + data_range {
+                long_count += 1;
+            }
+        }
+        println!("{:.5} {}", long_bin, "*".repeat(long_count));
+        long_count = 0;
+        long_bin += data_range;
+    }
 }
 
 fn main() {
