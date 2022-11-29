@@ -1,0 +1,1 @@
+C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\class_exe\hextochar\target\debug\hextochar.exe: C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\class_exe\hextochar\src\main.rs

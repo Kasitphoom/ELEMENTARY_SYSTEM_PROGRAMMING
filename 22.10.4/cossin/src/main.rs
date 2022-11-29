@@ -1,5 +1,5 @@
 fn lut_sin(x:f64) -> (f64, f64, f64){
-    const N:usize = 1001;
+    const N:usize = 10001;
     let mut lut = [[0.0,0.0];N];
     let mut m = 0.0;
     for i in 0..N {
@@ -27,7 +27,7 @@ fn lut_sin(x:f64) -> (f64, f64, f64){
 }
 
 fn main() {
-
+    // calling fucntion for sin values
     let test_lut:[f64;10] = [0.0, 11.0, 20.302, 35.0023, 49.0, 57.5, 60.0, 78.9, 89.111, 90.0];
     println!("==================================================================================");
     println!("Sin value \tLook up value \t\tComputed \t\tDifferences");
@@ -42,6 +42,11 @@ fn main() {
     println!("Average difference: {:.16}", avg);
     println!("==================================================================================");
 
+
+
+
+
+    // calling function for cos values
     println!("==================================================================================");
     println!("Cos value \tLook up value \t\tComputed \t\tDifferences");
     let mut avg = 0.0;
@@ -55,4 +60,31 @@ fn main() {
     println!("Average difference: {:.16}", avg);
     println!("==================================================================================");
     
+
+
+
+    
+    // calling function for tan values (tan = sin/cos)
+    println!("==================================================================================");
+    println!("Tan value \tLook up value \t\tComputed \t\tDifferences");
+    let mut avg = 0.0;
+    let mut n = 0;
+    for i in 0..10 {
+        let x = test_lut[i];
+        if x == 90.0{
+            println!("Tan 90 is not defined");
+            continue
+        }
+        let (res_sin, _real_sin, _diff_sin) = lut_sin(x);
+        let (res_cos, _real_cos, _diff_cos) = lut_sin(90.0 - x);
+        let res = res_sin/res_cos;
+        let real = (x.to_radians()).tan();
+        let diff = (res - real).abs();
+        println!("tan({})   \t{:.16} \t{:.16} \t{:.16}", x, res, real, diff);
+        avg += diff;
+        n += 1;
+    }
+    avg = avg/(n as f64);
+    println!("Average difference: {:.16}", avg);
+    println!("==================================================================================");
 }

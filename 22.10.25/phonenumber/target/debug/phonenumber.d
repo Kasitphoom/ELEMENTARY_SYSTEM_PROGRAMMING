@@ -1,0 +1,1 @@
+C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\22.10.25\phonenumber\target\debug\phonenumber.exe: C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\22.10.25\phonenumber\src\main.rs

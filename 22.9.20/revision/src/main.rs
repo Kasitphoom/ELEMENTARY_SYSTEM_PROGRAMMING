@@ -1,4 +1,5 @@
 use rand::*;
+use std::io;
 
 fn ex1(){
     println!("\n===========EX1=============");
@@ -219,15 +220,6 @@ struct Me{
     age: u8,
 }
 
-impl Me{
-    fn new(name: String, age: u8) -> Self{
-        Self{
-            name,
-            age,
-        }
-    }
-}
-
 fn ex15(){
     println!("\n===========EX15=============");
     let name  = "กษิตภูมิ ต่อวงษ์";
@@ -254,6 +246,8 @@ fn e16(string: String){
     }
     println!("{} is not in the text ({})", string, -1);
 }
+
+
 
 fn main() {
     ex1();

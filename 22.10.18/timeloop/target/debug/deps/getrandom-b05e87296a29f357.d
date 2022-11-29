@@ -1,0 +1,11 @@
+C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\22.10.18\timeloop\target\debug\deps\getrandom-b05e87296a29f357.rmeta: C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\lib.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\error.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\util.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\error_impls.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\windows.rs
+
+C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\22.10.18\timeloop\target\debug\deps\libgetrandom-b05e87296a29f357.rlib: C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\lib.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\error.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\util.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\error_impls.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\windows.rs
+
+C:\Users\Phoom\Desktop\homework\KMITL\ELEMENTARY_SYSTEM_PROGRAMMING\22.10.18\timeloop\target\debug\deps\getrandom-b05e87296a29f357.d: C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\lib.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\error.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\util.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\error_impls.rs C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\windows.rs
+
+C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\lib.rs:
+C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\error.rs:
+C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\util.rs:
+C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\error_impls.rs:
+C:\Users\Phoom\.cargo\registry\src\github.com-1ecc6299db9ec823\getrandom-0.2.7\src\windows.rs:

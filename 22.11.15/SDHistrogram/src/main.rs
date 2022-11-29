@@ -63,7 +63,7 @@ fn std_deciation_tometer( lat_long: &Vec<GPS> ) -> (f64, f64) {
 
 fn histrogram_bins( lat_long: &Vec<GPS> ) -> (Vec<[f64; 2]>, Vec<[f64; 2]>) {
     let data_range_lat = 0.00001;
-    let data_range_long = 0.000015;
+    let data_range_long = 0.00001;
 
     // find decimal places of the variable
     let mut decimal_places_lat = 0;
